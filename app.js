@@ -12,7 +12,6 @@ const products = await productsPromise;
 res.send(products)
 })
 
-// Obtener un solo producto por id
 app.get('/products/:pid', async (req, res) => {
     const productos = await productsPromise;
     const pid = parseInt(req.params.pid);
@@ -25,8 +24,6 @@ app.get('/products/:pid', async (req, res) => {
         res.status(404).send('Producto no encontrado');
     }
 });
-
-
 
 app.listen(PORT, ()=>{
     console.log(`Server run on port: ${PORT}`);
